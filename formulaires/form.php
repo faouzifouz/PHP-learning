@@ -42,7 +42,7 @@
         ?>
 
     <h2>ex05,6,7,8</h2>
-        <?php if (!isset($_POST['firstName2']) && !isset($_POST['name2']) && !isset($_POST['civi2'])) { ?>
+       
         <form method="POST" action="form.php"  enctype="multipart/form-data">
         <select name="civi2" required>
         <option value="chooseGenre">Sélectionnez votre civilité</option>
@@ -55,16 +55,8 @@
         <input type="file" name="userFile" accept=".pdf" required>
         <input type="submit" value="Envoyer">
         </form>
-        <?php } else {
-        $file = new SplFileInfo($_FILES['userFile']['name']);
-        if($file->getExtension() == 'pdf') {
-            echo "Vous êtes " . $_POST['civi2'] . ' ' . $_POST['name2'] . ' ' . $_POST['firstName2'] . ' et le fichier que vous avez uploadé est "' . $_FILES['userFile']['name'] . '".';
-        } else {
-            echo 'Veuillez mettre un fichier en "PDF".'; ?>
-            <a href="form.php">Recommencer</a>
-        <?php 
-        }
-    } ?>
+      
+    
       
 
 
